@@ -40,6 +40,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # CSS assets for tachyons.io for your Rails project.
 gem 'tachyons-rails', '~> 4.9'
+# Adds file validators to ActiveModel
+gem 'file_validators', '~> 2.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
