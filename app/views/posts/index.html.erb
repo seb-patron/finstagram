@@ -10,18 +10,31 @@
     </tr>
   </thead>
 
-  <tbody>
+
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.caption %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+       <
+               
+                    <%= image_tag(post.image, size: "600") %>
+                    
+               
+               <%= post.caption %>
+        
+
+          
+       
+        
+        <%= link_to 'Show', post %>
+        <%= link_to 'Edit', edit_post_path(post) %>
+        <<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      
     <% end %>
-  </tbody>
-</table>
+  
+
 
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+
+<style>
+
