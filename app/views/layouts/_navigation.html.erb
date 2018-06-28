@@ -4,8 +4,12 @@
      |<span class="f2 grad1"> Fins</span><span class="grad2">tagram</span>
   <% end %>
   <div class="dtc v-mid w-75 tr pr7">
-    <%= link_to 'New Post',  new_post_path,class:"link dim blue f6 f5-ns dib mr3 mr4-ns" %>
-    <a class="link dim blue f6 f5-ns dib mr3 mr4-ns" href="#" title="Store">Blog</a>
-    <%= link_to 'Join Us',  new_user_registration_path,class:"link dim blue f6 f5-ns dib mr3 mr4-ns" %>
+     <% if user_signed_in? %>
+          <%= link_to 'New Post',  new_post_path,class:"link dim blue f6 f5-ns dib mr3 mr4-ns" %>
+          <%= link_to 'Logout', destroy_user_session_path, class:"link dim blue f6 f5-ns dib mr3 mr4-ns", method: :delete %>
+     <% else %>   
+          <%= link_to 'Log In', new_user_session_path,  class:"link dim blue f6 f5-ns dib mr3 mr4-ns" %>
+          <%= link_to 'Join Us',  new_user_registration_path,class:"link dim blue f6 f5-ns dib mr3 mr4-ns" %>
+     <% end %>
   </div>
 </nav>
