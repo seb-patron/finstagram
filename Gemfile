@@ -44,6 +44,8 @@ gem 'tachyons-rails', '~> 4.9'
 gem 'file_validators', '~> 2.3'
 # Forms made easy!:)
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
+# Fontawesome packaged for Rails Asset Pipeline
+gem 'font-awesome-sass', '~> 5.0.13'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
