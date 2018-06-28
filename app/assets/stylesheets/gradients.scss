@@ -1,0 +1,19 @@
+.grad1 {
+     background: red;
+     background: -webkit-linear-gradient(left, green, cyan, blue, violet);
+     background: -o-linear-gradient(right, green, cyan, blue, violet);
+     background: -moz-linear-gradient(right, green, cyan, blue, violet);
+     background: linear-gradient(to right, green, cyan, blue, violet);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
+ 
+ .grad2 {
+     background: red;
+     background: -webkit-linear-gradient(left, violet, blue,  green);
+     background: -o-linear-gradient(right, violet, blue,  green);
+     background: -moz-linear-gradient(right, violet, blue,  green);
+     background: linear-gradient(to right, violet, blue,  green);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
