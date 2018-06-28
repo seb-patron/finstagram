@@ -10,6 +10,12 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+     @post = Post.find(params[:id])
+     respond_to do |format|
+          format.html { @post }
+          # format.json { render json: @post, include: [:image, image: {include: {attachments: {include: {blob: {methods: :service_url} } } } }] }
+          format.json { render json: @post, include: [:image] }
+     end
   end
 
   # GET /posts/new
