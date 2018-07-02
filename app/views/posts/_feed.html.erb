@@ -2,7 +2,7 @@
      <%= link_to post, class:"no-underline" do %>
      <section class="tc pa3   pt3">
           <article class="hide-child relative ba b--black-20 mw6 center bg-white pt2 br3" style="max-width: 500px">
-          <h1 class="tl f5 pl4 pb1 blue">Sebastian Patron </h1>
+          <h1 class="tl f5 pl4 pb1 blue"><%= post.user.username %> </h1>
 
                <div class="mw-100">
                     <%= image_tag(post.image, class:"db") %>
