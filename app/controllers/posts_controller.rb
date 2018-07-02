@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :owned_post, only: [:edit, :update, :destroy]
+
 
   # GET /posts
   # GET /posts.json
@@ -78,4 +80,11 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:caption, :image)
     end
+
+    # only allow the correct user to view pages
+    def owned_post
+     unless current_user == @post.user
+       flash[:alert] = "That post doesn't belong to you!"
+       redirect_to root_path
+   end end
 end
