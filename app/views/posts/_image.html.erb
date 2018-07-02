@@ -1,6 +1,6 @@
 <section class="tc pa3  pt3">
   <article class="hide-child relative ba b--black-20 mw6 center bg-white pt2 br3 w-75" style="max-width: 500px">
-  <h1 class="tl f5 pl4 pb1 blue">Sebastian Patron </h1>
+  <h1 class="tl f5 pl4 pb1 blue"><%= @post.user.username%> </h1>
 
      <div class="mw-100">
           <%= image_tag(@post.image, class:"db") %>
@@ -9,9 +9,15 @@
       <p class="f6 gray mv1 tl pl2 pr2"><%= @post.caption %></p>
       <a class="link tc ph3 w-25 center pv1 db bg-animate bg-dark-blue hover-bg-blue white f6 br1" href="#">Comment</a>
     </div>
-    <%= link_to edit_post_path(@post), class:"  absolute top-1 right-1 f5 bw1 black-40  no-underline  pa2 lh-solid b" do%>
+    <% if current_user.id == @post.user.id %>
+      
+    
+          <%= link_to edit_post_path(@post), class:"  absolute top-1 right-1 f5 bw1 black-40  no-underline  pa2 lh-solid b" do%>
           <%= icon('fas', 'edit', class:"",) %>
+          <% end %>
     <% end %>
   </article>
 </section>
+<% if current_user.id == @post.user.id %>
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

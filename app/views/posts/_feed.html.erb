@@ -10,9 +10,11 @@
                <div class="pa2 bt b--black-20">
                     <p class="f6 gray mv1 tl pl2 pr2"><%= post.caption %></p>
                     <a class="link tc ph3 w-25 center pv1 db bg-animate bg-dark-blue hover-bg-blue white f6 br1" href="#">Comment</a>
-               </div>
-               <%= link_to edit_post_path(post), class:"  absolute top-1 right-1 f5 bw1 black-40  no-underline  pa2 lh-solid b" do%>
-                         <%= icon('fas', 'edit', class:"",) %>
+               </div>               
+               <% if current_user.id == post.user.id %>
+                    <%= link_to edit_post_path(post), class:"  absolute top-1 right-1 f5 bw1 black-40  no-underline  pa2 lh-solid b" do%>
+                              <%= icon('fas', 'edit', class:"",) %>
+                    <% end %>
                <% end %>
           </article>
      </section>
