@@ -16,8 +16,7 @@ class PostsController < ApplicationController
      @post = Post.find(params[:id])
      respond_to do |format|
           format.html { @post }
-          # format.json { render json: @post, include: [:image, image: {include: {attachments: {include: {blob: {methods: :service_url} } } } }] }
-          format.json { render json: @post, include: [:image] }
+          format.json { render json: @post, methods: :image_url, include: [:image] }
      end
   end
 
